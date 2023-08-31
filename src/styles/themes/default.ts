@@ -37,6 +37,6 @@ export const defaultTheme = {
   },
   fonts: {
     regular: "'Roboto'",
-    title: "'Baloo 2'",
+    title: "'Roboto'",
   },
 }

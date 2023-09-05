@@ -1,7 +1,7 @@
 import { Container } from './styles'
 import Button from '../../components/Button'
 
-function Main() {
+export function Home() {
   return (
     <>
       <Container>
@@ -10,5 +10,3 @@ function Main() {
     </>
   )
 }
-
-export default Main

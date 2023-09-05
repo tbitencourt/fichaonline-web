@@ -1,6 +1,7 @@
 import { HeaderContainer } from './styles'
 import LogoImg from '../../assets/logo_1.svg'
 import { Link } from 'react-router-dom'
+import Button from '../Button'
 
 function Header() {
   return (
@@ -8,7 +9,7 @@ function Header() {
       <div className="container">
         <img src={LogoImg} alt="" />
         <Link to="#">FAQ</Link>
-        <Link to="#">Quem Somos</Link>
+        <Button text="Crie o seu card" />
       </div>
     </HeaderContainer>
   )

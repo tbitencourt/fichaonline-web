@@ -7,7 +7,7 @@ function Header() {
     <HeaderContainer>
       <div className="container">
         <img src={LogoImg} alt="" />
-        <Link to="#">FLinkQ</Link>
+        <Link to="#">FAQ</Link>
         <Link to="#">Quem Somos</Link>
       </div>
     </HeaderContainer>

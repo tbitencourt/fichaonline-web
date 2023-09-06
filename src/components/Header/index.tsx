@@ -13,7 +13,9 @@ function Header() {
   return (
     <HeaderContainer>
       <div className="container">
-        <img src={LogoImg} alt="" />
+        <Link to="/">
+          <img src={LogoImg} alt="" />
+        </Link>
         <Link to="#">FAQ</Link>
         <Button onClick={handleToCardSection} text="Crie o seu card" />
       </div>

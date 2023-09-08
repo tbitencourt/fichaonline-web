@@ -1,5 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
-
 export default [
   {
     title: 'Comece a jogar agora!',
@@ -17,13 +15,13 @@ export default [
     title: 'ADD-ONS',
     description:
       'Prepare-se! Toda semana tem novidades aqui no Catarse de 3DeT Victory. Vamos oferecer livros com preços e condições especiais...',
-    urls: 'https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/redactor_rails/picture/data/500485/a5e53dd6-e315-4b74-956b-9b8a58af9d78.png',
+    urls: 'https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/redactor_rails/picture/data/500458/e6b33e34-e1fe-436c-bbe1-97ec0c33686a.png',
   },
   {
     title: 'Kit Dados das Arcas',
     description:
       'Aventure-se pelas Arcas com os dados oficiais de 3DeT! São 3 dados coloridos de seis lados...',
-    urls: 'https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/redactor_rails/picture/data/504343/76496947-72d5-4e9c-b519-6958eacb6fe9.png',
+    urls: 'https://s3-sa-east-1.amazonaws.com/cdn.br.catarse/uploads/redactor_rails/picture/data/502815/e5309d28-3516-4cf8-9fa4-d7ef404e38d4.png',
   },
   {
     title: 'Defensores de Tóquio',

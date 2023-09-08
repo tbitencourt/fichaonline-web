@@ -17,7 +17,7 @@ function Header() {
           <img src={LogoImg} alt="" />
         </Link>
         <Link to="#">FICHA ONLINE</Link>
-        <Link to="#">BLOG</Link>
+        <Link to="/blog">BLOG</Link>
         <Button onClick={handleToCardSection} text="Criar Ficha" />
       </div>
     </HeaderContainer>

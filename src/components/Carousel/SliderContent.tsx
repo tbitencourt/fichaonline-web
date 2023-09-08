@@ -1,4 +1,4 @@
-interface SliderImage {
+export interface SliderImage {
   urls: string
   title: string
   description: string

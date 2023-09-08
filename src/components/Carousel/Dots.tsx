@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { FunctionComponent } from 'react'
+import { SliderImage } from './SliderContent'
 
 interface DotsProps {
   activeIndex: number
   onclick: (index: number) => void
-  sliderImage: any[] // Você pode ajustar o tipo de sliderImage conforme necessário
+  sliderImage: SliderImage[]
 }
 
 export const Dots: FunctionComponent<DotsProps> = ({

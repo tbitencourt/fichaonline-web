@@ -15,7 +15,7 @@ export const Dots: FunctionComponent<DotsProps> = ({
 }) => {
   return (
     <div className="all-dots">
-      {sliderImage.map((slide, index) => (
+      {sliderImage.map((_, index) => (
         <span
           key={index}
           className={`${activeIndex === index ? 'dot active-dot' : 'dot'}`}

@@ -13,10 +13,12 @@ function Header() {
   return (
     <HeaderContainer>
       <div className="container">
-        <Link to="/">
-          <img src={LogoImg} alt="" />
-        </Link>
-        <Link to="#">FICHA ONLINE</Link>
+        <div className="logo">
+          <Link to="/">
+            <img src={LogoImg} alt="" />
+          </Link>
+        </div>
+        <Link to="#">HOME</Link>
         <Link to="/blog">BLOG</Link>
         <Button onClick={handleToCardSection} text="Criar Ficha" />
       </div>

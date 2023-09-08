@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
     top: 1.5rem;
 
     img {
-      width: 4.5rem;
+      width: 6.5rem;
     }
 
     a {

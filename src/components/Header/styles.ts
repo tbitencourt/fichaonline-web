@@ -5,19 +5,17 @@ export const HeaderContainer = styled.header`
   height: 0;
   // max-width: 1120px;
 
-  div.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: 1.5rem;
 
-    img {
-      width: 6.5rem;
-    }
+  img {
+    width: 6.5rem;
+  }
 
-    a {
-      color: ${({ theme }) => theme.colors['base-title']};
-    }
+  a {
+    color: ${({ theme }) => theme.colors['base-title']};
   }
 `

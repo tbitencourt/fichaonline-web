@@ -54,31 +54,34 @@ export const Header = styled.div`
   }
 
   .infos {
+    width: 33rem;
     display: grid;
     grid-template-areas:
       'name'
       'archtype'
       'concept';
-    row-gap: 0.5rem;
 
     font-size: 1.125rem;
     font-weight: 400;
 
     input {
-      width: 30rem;
+      width: 100%;
     }
 
     .name {
       grid-area: name;
-      gap: 2rem;
+      gap: 1rem;
+      display: flex;
     }
 
     .archtype {
       grid-area: archtype;
+      display: flex;
     }
 
     .concept {
       grid-area: concept;
+      display: flex;
     }
   }
 `
@@ -116,6 +119,15 @@ const BaseElement = styled.div`
     font-family: 'Kanit', sans-serif;
     border: none;
     background: transparent;
+  }
+
+  .inputs {
+    display: flex;
+    align-items: center;
+
+    button {
+      border: 1px solid black;
+    }
   }
 `
 

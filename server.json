@@ -1,0 +1,12 @@
+{
+  "advantages": [
+    {
+      "id": 1,
+      "name": "Aceleração",
+      "description": "Você se move muito rápido. Pode gastar 1PM para realizar um movimento extra em seu turno. Você também pode gastar 1PM antes de rolar os dados para receber um Ganho na iniciativa, ou em testes de Habilidade para correr, fugir ou perseguir um oponente.",
+      "type": "Vantagem",
+      "cost": 1,
+      "origin": "playtest"
+     }
+  ]
+}

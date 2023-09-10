@@ -12,7 +12,7 @@ export const BaseAttribute = styled.div`
   border-top-left-radius: 10px;
   border-bottom-right-radius: 8px;
 
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 400;
 
   input {

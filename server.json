@@ -34,5 +34,23 @@
       "cost": -2,
       "origin": "playtest"
      }
+  ],
+  "expertises": [
+    {
+      "id": 1,
+      "name": "Animais",
+      "description": "Você sabe cuidar, adestrar, cavalgar e lidar com animais e outras criaturasirracionais. Pode substituir Medicina (apenas para animais). Com bons resultados nos testes,você consegue até se comunicar com animais.",
+      "type": "Perícia`",
+      "cost": 1,
+      "origin": "demo"
+     },
+     {
+      "id": 2,
+      "name": "Arte",
+      "description": "Você sabe fazer performances artísticas como cantar, dançar, tocar música, cozinhar, fazer cosplay (e se disfarçar), desenhar, avaliar objetos de arte e outras.",
+      "type": "Perícia",
+      "cost": 1,
+      "origin": "demo"
+     }
   ]
 }

@@ -19,9 +19,19 @@ interface DisadvantagesProps {
   origin: string
 }
 
+interface ExpertisesProps {
+  id: number
+  name: string
+  description: string
+  type: string
+  cost: number
+  origin: string
+}
+
 interface CharacterSheetContextType {
   advantagesList: AdvantagesProps[]
   disadvantagesList: DisadvantagesProps[]
+  expertisesList: ExpertisesProps[]
 }
 
 export const CharacterSheetContext = createContext(
@@ -39,6 +49,7 @@ export function CharacterSheetContextProvider({
   const [disadvantagesList, setDisadvantagesList] = useState<
     DisadvantagesProps[]
   >([])
+  const [expertisesList, setExpertisesList] = useState<ExpertisesProps[]>([])
 
   useEffect(() => {
     async function fetchAdvantages() {
@@ -62,6 +73,16 @@ export function CharacterSheetContextProvider({
       setDisadvantagesList(response.data)
     }
     fetchDisadvantages()
+    async function fetchExpertises() {
+      const response = await api.get('/expertises', {
+        params: {
+          _sort: 'name',
+          _order: 'desc',
+        },
+      })
+      setExpertisesList(response.data)
+    }
+    fetchExpertises()
   }, [])
 
   return (
@@ -69,6 +90,7 @@ export function CharacterSheetContextProvider({
       value={{
         advantagesList,
         disadvantagesList,
+        expertisesList,
       }}
     >
       {children}

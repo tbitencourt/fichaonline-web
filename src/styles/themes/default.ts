@@ -19,6 +19,17 @@ export const defaultTheme = {
     'brand-yellow-dark': '#C47F17',
   },
 
+  sheetColors: {
+    pink: '#F316E5',
+    'blue-100': '#E8FBFF',
+    'blue-200': '#33E7FF',
+    'blue-300': '#3485FF',
+    'blue-400': '#40678A',
+    'blue-500': '#13456F',
+    'gray-300': '#3D3D3D',
+    'blue-bg': '#EDF8F8',
+  },
+
   textSizes: {
     'title-title-xl': '3rem',
     'title-title-l': '2rem',

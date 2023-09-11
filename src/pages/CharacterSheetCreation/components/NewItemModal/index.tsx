@@ -1,22 +1,24 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as Dialog from '@radix-ui/react-dialog'
-import { CloseButton, Content, Overlay } from './styles'
+import { CloseButton, Content, Overlay, Title } from './styles'
 import { useContext } from 'react'
 import { CharacterSheetContext } from '../../../../contexts/CharacterSheetContext'
-import { AdvantagesProps, DisadvantagesProps } from '../..'
+import { AdvantagesProps, DisadvantagesProps, ExpertisesProps } from '../..'
 
 interface NewItemModalProps {
   variant: 'advantages' | 'disadvantages' | 'expertises' | 'techniques'
   setAdvantageFunction?: (data: AdvantagesProps) => void | undefined
   setDisadvantageFunction?: (data: DisadvantagesProps) => void | undefined
+  setExpertiseFunction?: (data: ExpertisesProps) => void | undefined
 }
 
 export function NewItemModal({
   variant,
   setAdvantageFunction,
   setDisadvantageFunction,
+  setExpertiseFunction,
 }: NewItemModalProps) {
-  const { advantagesList, disadvantagesList } = useContext(
+  const { advantagesList, disadvantagesList, expertisesList } = useContext(
     CharacterSheetContext,
   )
 
@@ -27,6 +29,10 @@ export function NewItemModal({
   function handleAddNewDisadvantage(id: number) {
     // @ts-ignore
     setDisadvantageFunction(disadvantagesList[id - 1])
+  }
+  function handleAddNewExpertise(id: number) {
+    // @ts-ignore
+    setExpertiseFunction(expertisesList[id - 1])
   }
   return (
     <Dialog.Portal>
@@ -39,10 +45,13 @@ export function NewItemModal({
 
         {variant === 'advantages' && (
           <>
-            <Dialog.Title>Vantagens</Dialog.Title>
+            <Title>Vantagens</Title>
             {advantagesList.map((adv) => (
               <div key={adv.id} className="item">
-                <p id="name-cost">{`${adv.name} - Custo: ${adv.cost}`}</p>
+                <div className="name-cost">
+                  <span id="name">{`${adv.name}`}</span>
+                  <span id="cost">{`${adv.cost}pt`}</span>
+                </div>
                 <p id="description">{adv.description}</p>
                 <button
                   id="add-button"
@@ -57,14 +66,17 @@ export function NewItemModal({
 
         {variant === 'disadvantages' && (
           <>
-            <Dialog.Title>Desvantagens</Dialog.Title>
-            {disadvantagesList.map((adv) => (
-              <div key={adv.id} className="item">
-                <p id="name-cost">{`${adv.name} - Custo: ${adv.cost}`}</p>
-                <p id="description">{adv.description}</p>
+            <Title>Desvantagens</Title>
+            {disadvantagesList.map((disadvantage) => (
+              <div key={disadvantage.id} className="item">
+                <div className="name-cost">
+                  <span id="name">{`${disadvantage.name}`}</span>
+                  <span id="cost">{`${disadvantage.cost}pt`}</span>
+                </div>
+                <p id="description">{disadvantage.description}</p>
                 <button
                   id="add-button"
-                  onClick={() => handleAddNewDisadvantage(adv.id)}
+                  onClick={() => handleAddNewDisadvantage(disadvantage.id)}
                 >
                   Adicionar
                 </button>
@@ -75,25 +87,28 @@ export function NewItemModal({
 
         {variant === 'expertises' && (
           <>
-            <Dialog.Title>Perícias</Dialog.Title>
-            {/* {expertisesList.map((adv) => (
-              <div key={adv.id} className="item">
-                <p id="name-cost">{`${adv.name} - Custo: ${adv.cost}`}</p>
-                <p id="description">{adv.description}</p>
+            <Title>Perícias</Title>
+            {expertisesList.map((expertise) => (
+              <div key={expertise.id} className="item">
+                <div className="name-cost">
+                  <span id="name">{`${expertise.name}`}</span>
+                  <span id="cost">{`${expertise.cost}pt`}</span>
+                </div>
+                <p id="description">{expertise.description}</p>
                 <button
                   id="add-button"
-                  onClick={() => handleAddNewAdavantage(adv.id)}
+                  onClick={() => handleAddNewExpertise(expertise.id)}
                 >
                   Adicionar
                 </button>
               </div>
-            ))} */}
+            ))}
           </>
         )}
 
         {variant === 'techniques' && (
           <>
-            <Dialog.Title>Técnicas</Dialog.Title>
+            <Title>Técnicas</Title>
             {/* {advantagesList.map((adv) => (
               <div key={adv.id} className="item">
                 <p id="name-cost">{`${adv.name} - Custo: ${adv.cost}`}</p>

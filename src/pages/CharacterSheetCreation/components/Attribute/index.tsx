@@ -1,4 +1,4 @@
-import { AttributeContainer, BaseAttribute } from './styles'
+import { AttributeContainer, BaseAttribute, SecondaryAttribute } from './styles'
 
 import AbilityIcon from '../../../../assets/SheetIcons/ability-icon.png'
 import ActtionPointsIcon from '../../../../assets/SheetIcons/action-points-icon.png'
@@ -50,31 +50,31 @@ export function Attribute({ variant }: AttributeProps) {
         </BaseAttribute>
       )}
       {variant === 'action' && (
-        <BaseAttribute>
+        <SecondaryAttribute>
           <div className="image">
             <img src={ActtionPointsIcon} alt="" />
           </div>
           <label htmlFor="action-points">PA: </label>
           <input id="action-points" type="number" />
-        </BaseAttribute>
+        </SecondaryAttribute>
       )}
       {variant === 'mana' && (
-        <BaseAttribute>
+        <SecondaryAttribute>
           <div className="image">
             <img src={ManaPointsIcon} alt="" />
           </div>
           <label htmlFor="mana-points">PM: </label>
           <input id="mana-points" type="number" />
-        </BaseAttribute>
+        </SecondaryAttribute>
       )}
       {variant === 'life' && (
-        <BaseAttribute>
+        <SecondaryAttribute>
           <div className="image">
             <img src={LifePointsIcon} alt="" />
           </div>
           <label htmlFor="life-points">PV: </label>
           <input id="life-points" type="number" />
-        </BaseAttribute>
+        </SecondaryAttribute>
       )}
     </AttributeContainer>
   )

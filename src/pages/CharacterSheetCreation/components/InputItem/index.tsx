@@ -9,7 +9,7 @@ interface InputItemProps {
 export function InputItem({ data }: InputItemProps) {
   return (
     <InputItemContainer>
-      <input value={data.name} />
+      <input id="name" value={data.name} />
       <div className="buttons">
         <Dialog.Root>
           <Dialog.Trigger asChild>

@@ -14,7 +14,7 @@ export const Content = styled(Dialog.Content)`
   height: 35rem;
   border-radius: 6px;
   padding: 2.5rem 3rem;
-  background: white;
+  background: ${(props) => props.theme.sheetColors['blue-bg']};
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -32,27 +32,47 @@ export const Content = styled(Dialog.Content)`
       'name name button'
       'desc desc desc';
 
-    background: lightblue;
+    background: ${(props) => props.theme.sheetColors['blue-100']};
     padding: 1rem;
+    border: 2px solid ${(props) => props.theme.sheetColors['blue-200']};
     border-radius: 8px;
 
-    #name-cost {
+    .name-cost {
       grid-area: name;
+      display: flex;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.25rem;
+      gap: 0.5rem;
+    }
+    #name {
+      color: ${(props) => props.theme.sheetColors.pink};
+    }
+    #cost {
+      color: ${(props) => props.theme.sheetColors['blue-300']};
     }
     #description {
       grid-area: desc;
       font-size: 0.875rem;
+      color: ${(props) => props.theme.sheetColors['gray-300']};
+      max-height: 6rem;
+      overflow: auto;
     }
     #add-button {
       grid-area: button;
       border: none;
-      background: lightgoldenrodyellow;
+      background: ${(props) => props.theme.sheetColors['blue-200']};
+      color: white;
       border-radius: 8px;
     }
   }
 `
+
+export const Title = styled(Dialog.Title)`
+  display: flex;
+  justify-content: center;
+  color: ${(props) => props.theme.sheetColors['blue-300']};
+`
+
 export const CloseButton = styled(Dialog.Close)`
   position: absolute;
   background: transparent;

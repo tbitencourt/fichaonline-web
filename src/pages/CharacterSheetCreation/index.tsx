@@ -37,6 +37,14 @@ export interface DisadvantagesProps {
   cost: number
   origin: string
 }
+export interface ExpertisesProps {
+  id: number
+  name: string
+  description: string
+  type: string
+  cost: number
+  origin: string
+}
 
 export function CharacterSheetCreation() {
   const [advantages, setAdvantages] = useState<AdvantagesProps[]>(() => {
@@ -63,6 +71,17 @@ export function CharacterSheetCreation() {
       }
     },
   )
+  const [expertises, setExpertises] = useState<ExpertisesProps[]>(() => {
+    const storedExpertisesSketchAsJSON = localStorage.getItem(
+      '@ficha-online:sheet-expertises-sketch- 1.0.0',
+    )
+
+    if (storedExpertisesSketchAsJSON) {
+      return JSON.parse(storedExpertisesSketchAsJSON)
+    } else {
+      return []
+    }
+  })
 
   function setAdvantageFunction(data: AdvantagesProps) {
     setAdvantages((prevState) => [...prevState, data])
@@ -71,9 +90,14 @@ export function CharacterSheetCreation() {
     setDisadvantages((prevState) => [...prevState, data])
   }
 
+  function setExpertiseFunction(data: ExpertisesProps) {
+    setExpertises((prevState) => [...prevState, data])
+  }
+
   function handleSaveSketch() {
     const advantagesJSON = JSON.stringify(advantages)
     const disadvantagesJSON = JSON.stringify(disadvantages)
+    const expertisesJSON = JSON.stringify(expertises)
 
     localStorage.setItem(
       '@ficha-online:sheet-advantages-sketch- 1.0.0',
@@ -83,12 +107,17 @@ export function CharacterSheetCreation() {
       '@ficha-online:sheet-disadvantages-sketch- 1.0.0',
       disadvantagesJSON,
     )
+    localStorage.setItem(
+      '@ficha-online:sheet-expertises-sketch- 1.0.0',
+      expertisesJSON,
+    )
     alert('Rascunho salvo com sucesso')
   }
 
   function cleanAllInputs() {
     setAdvantages([])
     setDisadvantages([])
+    setExpertises([])
   }
 
   return (
@@ -132,14 +161,14 @@ export function CharacterSheetCreation() {
         </Attributes>
 
         <Advantages>
-          <h1>Vantagens</h1>
+          <span>Vantagens</span>
           {advantages.map((adv) => (
             <InputItem key={adv.id} data={adv} />
           ))}
 
           <Dialog.Root>
             <Dialog.Trigger asChild>
-              <button>Adicionar novo campo +</button>
+              <button id="new-input-button">Adicionar novo campo +</button>
             </Dialog.Trigger>
 
             <NewItemModal
@@ -150,14 +179,14 @@ export function CharacterSheetCreation() {
         </Advantages>
 
         <Disadvantages>
-          <h1>Desvantagens</h1>
+          <span>Desvantagens</span>
           {disadvantages.map((adv) => (
             <InputItem key={adv.id} data={adv} />
           ))}
 
           <Dialog.Root>
             <Dialog.Trigger asChild>
-              <button>Adicionar novo campo +</button>
+              <button id="new-input-button">Adicionar novo campo +</button>
             </Dialog.Trigger>
 
             <NewItemModal
@@ -168,38 +197,48 @@ export function CharacterSheetCreation() {
         </Disadvantages>
 
         <Expertises>
-          <h1>Perícias</h1>
-          <input></input>
-          <input></input>
+          <span>Perícias</span>
+          {expertises.map((expertise) => (
+            <InputItem key={expertise.id} data={expertise} />
+          ))}
 
-          <button>Adicionar novo campo +</button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button id="new-input-button">Adicionar novo campo +</button>
+            </Dialog.Trigger>
+
+            <NewItemModal
+              variant={'expertises'}
+              setExpertiseFunction={setExpertiseFunction}
+            />
+          </Dialog.Root>
         </Expertises>
 
         <Techniques>
-          <h1>Técnicas</h1>
+          <span>Técnicas</span>
           <input></input>
           <input></input>
           <input></input>
-          <button>Adicionar novo campo +</button>
+          <button id="new-input-button">Adicionar novo campo +</button>
         </Techniques>
 
         <Equipments>
-          <h1>Equipamento</h1>
+          <span>Equipamento</span>
           <input></input>
           <input></input>
           <input></input>
-          <button>Adicionar novo campo +</button>
+          <button id="new-input-button">Adicionar novo campo +</button>
         </Equipments>
 
         <Notes>
-          <h1>Anotações</h1>
+          <span>Anotações</span>
           <textarea></textarea>
         </Notes>
 
         <CharacterImage></CharacterImage>
 
         <Experience>
-          <h1>EXP</h1>
+          <span>EXP</span>
           <input></input>
         </Experience>
       </SheetContainer>

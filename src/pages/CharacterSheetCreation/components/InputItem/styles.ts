@@ -2,15 +2,16 @@ import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 
 export const InputItemContainer = styled.div`
-  width: 20rem;
+  width: 22rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid black;
+  justify-content: center;
+  border-bottom: 1px solid ${(props) => props.theme.sheetColors['blue-300']};
 
   input {
     width: 15rem;
     border: none;
+    color: ${(props) => props.theme.sheetColors['blue-300']};
   }
   .buttons {
     width: 3rem;
@@ -18,6 +19,10 @@ export const InputItemContainer = styled.div`
     align-items: center;
     gap: 1rem;
     justify-content: center;
+
+    > button {
+      color: ${(props) => props.theme.sheetColors['blue-300']};
+    }
   }
 `
 

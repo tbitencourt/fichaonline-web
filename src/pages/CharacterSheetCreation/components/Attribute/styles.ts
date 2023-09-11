@@ -8,7 +8,7 @@ export const BaseAttribute = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border: 2px solid gray;
+  border: 2px solid ${(props) => props.theme.sheetColors.pink};
   border-top-left-radius: 10px;
   border-bottom-right-radius: 8px;
 
@@ -22,7 +22,7 @@ export const BaseAttribute = styled.div`
 
   .image {
     border-top-left-radius: 10px;
-    background-color: gray;
+    background-color: ${(props) => props.theme.sheetColors.pink};
     line-height: 0;
     img {
       width: 2.5rem;
@@ -30,7 +30,18 @@ export const BaseAttribute = styled.div`
     }
   }
 
+  label {
+    color: ${(props) => props.theme.sheetColors['gray-300']};
+  }
   input {
     border: none;
+    color: ${(props) => props.theme.sheetColors['gray-300']};
+  }
+`
+export const SecondaryAttribute = styled(BaseAttribute)`
+  border: 2px solid ${(props) => props.theme.sheetColors['blue-300']};
+
+  .image {
+    background: ${(props) => props.theme.sheetColors['blue-300']};
   }
 `

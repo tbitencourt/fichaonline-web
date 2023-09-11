@@ -23,11 +23,23 @@ export const SheetContainer = styled.div`
   row-gap: 1rem;
   column-gap: 3rem;
 
-  border: 1px solid black;
+  border: 2px solid ${(props) => props.theme.sheetColors['blue-200']};
+  border-radius: 8px;
   padding: 4rem;
+
+  background: ${(props) => props.theme.sheetColors['blue-bg']};
 
   input {
     font-family: 'Kanit', sans-serif;
+    background: transparent;
+  }
+
+  h1 {
+    color: ${(props) => props.theme.sheetColors['blue-300']};
+  }
+
+  #new-input-button {
+    color: ${(props) => props.theme.sheetColors.pink};
   }
 `
 
@@ -104,9 +116,15 @@ export const Attributes = styled.div`
 const BaseElement = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
   gap: 0.5rem;
   font-size: 0.8rem;
   font-weight: 400;
+  background: ${(props) => props.theme.sheetColors['blue-100']};
+  border: 1px solid ${(props) => props.theme.sheetColors['blue-200']};
+  border-radius: 8px;
+  padding: 0.8rem;
 
   button {
     width: 20rem;
@@ -118,10 +136,21 @@ const BaseElement = styled.div`
   .inputs {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     button {
       border: 1px solid black;
     }
+  }
+
+  span {
+    color: ${(props) => props.theme.sheetColors['blue-300']};
+    font-size: 1.225rem;
+    text-align: center;
+  }
+
+  #new-input-button {
+    color: ${(props) => props.theme.sheetColors.pink};
   }
 `
 

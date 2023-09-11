@@ -1,6 +1,26 @@
 import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 
+export const InputItemContainer = styled.div`
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid black;
+
+  input {
+    width: 15rem;
+    border: none;
+  }
+  .buttons {
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+`
+
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   width: 100vw;
@@ -10,7 +30,8 @@ export const Overlay = styled(Dialog.Overlay)`
 `
 
 export const Content = styled(Dialog.Content)`
-  min-width: 32rem;
+  width: 32rem;
+  max-height: 40rem;
   border-radius: 6px;
   padding: 2.5rem 3rem;
   background: white;
@@ -22,12 +43,6 @@ export const Content = styled(Dialog.Content)`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  .name-description {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
 `
 export const CloseButton = styled(Dialog.Close)`
   position: absolute;

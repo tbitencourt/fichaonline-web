@@ -3,13 +3,16 @@ import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Routes'
+import { CharacterSheetContextProvider } from './contexts/CharacterSheetContext'
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
-        <Router />
+        <CharacterSheetContextProvider>
+          <Router />
+        </CharacterSheetContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   )

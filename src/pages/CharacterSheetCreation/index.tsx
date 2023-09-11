@@ -17,10 +17,19 @@ import logo3DeT from '../../assets/logo3det.png'
 import { Attribute } from './components/Attribute'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { NewAdvantageModal } from './components/NewAdvantageModal'
+import { NewItemModal } from './components/NewItemModal'
 import { useState } from 'react'
+import { InputItem } from './components/InputItem'
 
-interface AdvantagesProps {
+export interface AdvantagesProps {
+  id: number
+  name: string
+  description: string
+  type: string
+  cost: number
+  origin: string
+}
+export interface DisadvantagesProps {
   id: number
   name: string
   description: string
@@ -30,11 +39,56 @@ interface AdvantagesProps {
 }
 
 export function CharacterSheetCreation() {
-  const [advantages, setAdvantages] = useState<AdvantagesProps[]>([])
+  const [advantages, setAdvantages] = useState<AdvantagesProps[]>(() => {
+    const storedAdvantagesSketchAsJSON = localStorage.getItem(
+      '@ficha-online:sheet-advantages-sketch- 1.0.0',
+    )
 
-  function setAdvantageFunction(data: any) {
-    console.log(data)
+    if (storedAdvantagesSketchAsJSON) {
+      return JSON.parse(storedAdvantagesSketchAsJSON)
+    } else {
+      return []
+    }
+  })
+  const [disadvantages, setDisadvantages] = useState<DisadvantagesProps[]>(
+    () => {
+      const storedDisadvantagesSketchAsJSON = localStorage.getItem(
+        '@ficha-online:sheet-disadvantages-sketch- 1.0.0',
+      )
+
+      if (storedDisadvantagesSketchAsJSON) {
+        return JSON.parse(storedDisadvantagesSketchAsJSON)
+      } else {
+        return []
+      }
+    },
+  )
+
+  function setAdvantageFunction(data: AdvantagesProps) {
     setAdvantages((prevState) => [...prevState, data])
+  }
+  function setDisadvantageFunction(data: DisadvantagesProps) {
+    setDisadvantages((prevState) => [...prevState, data])
+  }
+
+  function handleSaveSketch() {
+    const advantagesJSON = JSON.stringify(advantages)
+    const disadvantagesJSON = JSON.stringify(disadvantages)
+
+    localStorage.setItem(
+      '@ficha-online:sheet-advantages-sketch- 1.0.0',
+      advantagesJSON,
+    )
+    localStorage.setItem(
+      '@ficha-online:sheet-disadvantages-sketch- 1.0.0',
+      disadvantagesJSON,
+    )
+    alert('Rascunho salvo com sucesso')
+  }
+
+  function cleanAllInputs() {
+    setAdvantages([])
+    setDisadvantages([])
   }
 
   return (
@@ -59,6 +113,10 @@ export function CharacterSheetCreation() {
               <input id="concept" />
             </div>
           </div>
+          <button onClick={() => handleSaveSketch()}>Salvar Rascunho</button>
+          <button onClick={() => cleanAllInputs()}>
+            Limpar todos os campos
+          </button>
         </Header>
 
         <Attributes>
@@ -76,11 +134,7 @@ export function CharacterSheetCreation() {
         <Advantages>
           <h1>Vantagens</h1>
           {advantages.map((adv) => (
-            <div key={adv.id} className="inputs">
-              <input value={adv.name} readOnly />
-              <button>X</button>
-              <button>Lupa</button>
-            </div>
+            <InputItem key={adv.id} data={adv} />
           ))}
 
           <Dialog.Root>
@@ -88,16 +142,29 @@ export function CharacterSheetCreation() {
               <button>Adicionar novo campo +</button>
             </Dialog.Trigger>
 
-            <NewAdvantageModal setAdvantageFunction={setAdvantageFunction} />
+            <NewItemModal
+              variant={'advantages'}
+              setAdvantageFunction={setAdvantageFunction}
+            />
           </Dialog.Root>
         </Advantages>
 
         <Disadvantages>
           <h1>Desvantagens</h1>
-          <input></input>
-          <input></input>
+          {disadvantages.map((adv) => (
+            <InputItem key={adv.id} data={adv} />
+          ))}
 
-          <button>Adicionar novo campo +</button>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <button>Adicionar novo campo +</button>
+            </Dialog.Trigger>
+
+            <NewItemModal
+              variant={'disadvantages'}
+              setDisadvantageFunction={setDisadvantageFunction}
+            />
+          </Dialog.Root>
         </Disadvantages>
 
         <Expertises>

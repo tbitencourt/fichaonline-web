@@ -108,12 +108,6 @@ const BaseElement = styled.div`
   font-size: 0.8rem;
   font-weight: 400;
 
-  input {
-    width: 20rem;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
-
   button {
     width: 20rem;
     font-family: 'Kanit', sans-serif;

@@ -7,6 +7,32 @@
       "type": "Vantagem",
       "cost": 1,
       "origin": "playtest"
+     },
+     {
+      "id": 2,
+      "name": "Aceleração",
+      "description": "Você se move muito rápido. Pode gastar 1PM para realizar um movimento extra em seu turno. Você também pode gastar 1PM antes de rolar os dados para receber um Ganho na iniciativa, ou em testes de Habilidade para correr, fugir ou perseguir um oponente.",
+      "type": "Vantagem",
+      "cost": 1,
+      "origin": "playtest"
+     }
+  ],
+  "disadvantages": [
+    {
+      "id": 1,
+      "name": "Ambiente",
+      "description": "Você é dependente de certo ambiente: água, clima ártico, atmosfera de metano,shopping, home theater, fliperama, cozinha de restaurante totalmente equipada, ou outrolugar/clima/terreno que não existe em abundância no local da campanha.No início de cada cena, role 1D. Com um resultado 1, nada relacionado a seu ambiente existeali, e você tem Perda em todos os testes.O mestre pode julgar situações especiais e dispensar a rolagem. Por exemplo, se seuAmbiente é água e vocês estão em uma cidade submersa (neste caso, seria impossível nãoexistir água na cena). Da mesma forma, se o grupo viaja pelo deserto, não haveria qualquerágua — e nem necessidade de rolar o dado.",
+      "type": "Desvantagem",
+      "cost": -1,
+      "origin": "playtest"
+     },
+     {
+      "id": 2,
+      "name": "Amnésia",
+      "description": "Você não sabe quem é. Talvez seja um espião que sofreu lavagem cerebral, ou umandroide com dados apagados, ou algum grande trauma tirou sua memória.Se você decide ter esta desvantagem, o mestre faz sua ficha em segredo. Você pode tentarfazer coisas, e o mestre diz se conseguiu ou não — sem jamais dizer se você tem mesmo avantagem. Você pode ter Ganho ou Perda em testes sem saber a razão. Ainda, o mestre podeescolher rolar seus testes secretamente, apenas anunciando os resultados. Não valeperguntar! Você pode acabar descobrindo coisas por tentativa e erro, mas suas completascapacidades e limitações devem permanecer um mistério.“Ah, eu saio tentando fazer de tudo!” Boa tentativa, espertinho, mas suas vantagens sófuncionam em situações de risco real, e as desvantagens aparecem no pior momentopossível.Atenção: Esta desvantagem é divertida, mas dá muito trabalho para o mestre. Seja legal comele. Traga refri.",
+      "type": "Desvantagem",
+      "cost": -2,
+      "origin": "playtest"
      }
   ]
 }

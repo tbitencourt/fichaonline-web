@@ -1,3 +1,6 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
 export interface SliderImage {
   urls: string
   title: string
@@ -6,13 +9,27 @@ export interface SliderImage {
 
 interface SliderContentProps {
   activeIndex: number
-  sliderImage: SliderImage[]
 }
 
-function SliderContent({ activeIndex, sliderImage }: SliderContentProps) {
+function SliderContent({ activeIndex }: SliderContentProps) {
+  const [data, setData] = useState<SliderImage[]>([])
+
+  useEffect(() => {
+    const apiUrl = 'http://localhost:3333/news'
+
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        setData(response.data)
+      })
+      .catch((error) => {
+        console.error('Erro ao buscar dados da API:', error)
+      })
+  }, [])
+
   return (
     <section>
-      {sliderImage.map((slide, index) => (
+      {data.map((slide, index) => (
         <div
           key={index}
           className={index === activeIndex ? 'slides active' : 'inactive'}

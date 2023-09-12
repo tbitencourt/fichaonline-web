@@ -21,7 +21,7 @@ function Slider() {
 
   return (
     <div className="slider-container">
-      <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
+      <SliderContent activeIndex={activeIndex} />
       <Arrows
         prevSlide={() =>
           setActiveIndex((prevActiveIndex) =>

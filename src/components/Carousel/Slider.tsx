@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import SliderContent from './SliderContent'
-import { Dots } from './Dots'
-import { Arrows } from './Arrows'
+import SliderContent from './components/SliderContent'
+import { Dots } from './components/Dots'
+import { Arrows } from './components/Arrows'
 
-import sliderImage from './sliderImage'
+import sliderImage from './components/sliderImage'
 import './slider.css'
 
 const len = sliderImage.length - 1

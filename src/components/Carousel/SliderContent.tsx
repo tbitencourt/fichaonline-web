@@ -23,7 +23,7 @@ function SliderContent({ activeIndex }: SliderContentProps) {
         setData(response.data)
       })
       .catch((error) => {
-        console.error('Erro ao buscar dados da API:', error)
+        console.error('Falha ao carregar os dados da API:', error)
       })
   }, [])
 

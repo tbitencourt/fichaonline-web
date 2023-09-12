@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import SliderContent from './SliderContent'
 import { Dots } from './Dots'
 import { Arrows } from './Arrows'
+
 import sliderImage from './sliderImage'
 import './slider.css'
 

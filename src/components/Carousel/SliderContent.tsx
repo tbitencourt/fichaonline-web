@@ -15,10 +15,8 @@ function SliderContent({ activeIndex }: SliderContentProps) {
   const [data, setData] = useState<SliderImage[]>([])
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:3333/news'
-
     axios
-      .get(apiUrl)
+      .get('http://localhost:3333/news')
       .then((response) => {
         setData(response.data)
       })

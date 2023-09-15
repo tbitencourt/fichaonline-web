@@ -7,7 +7,7 @@ export const BaseAttribute = styled.div`
   height: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.2rem;
   border: 2px solid ${(props) => props.theme.sheetColors.pink};
   border-top-left-radius: 10px;
   border-bottom-right-radius: 8px;
@@ -16,7 +16,7 @@ export const BaseAttribute = styled.div`
   font-weight: 400;
 
   input {
-    width: 1.8rem;
+    width: 2.1rem;
     font-family: 'Kanit', sans-serif;
   }
 

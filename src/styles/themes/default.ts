@@ -20,14 +20,14 @@ export const defaultTheme = {
   },
 
   sheetColors: {
-    pink: '#F316E5',
-    'blue-100': '#E8FBFF',
-    'blue-200': '#33E7FF',
-    'blue-300': '#3485FF',
-    'blue-400': '#40678A',
-    'blue-500': '#13456F',
-    'gray-300': '#3D3D3D',
-    'blue-bg': '#EDF8F8',
+    pink: 'gray',
+    'blue-100': '#gray',
+    'blue-200': 'gray',
+    'blue-300': 'gray',
+    'blue-400': 'gray',
+    'blue-500': 'gray',
+    'gray-300': 'gray',
+    'blue-bg': 'white',
   },
 
   textSizes: {

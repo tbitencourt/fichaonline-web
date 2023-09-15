@@ -15,10 +15,8 @@ export const SheetContainer = styled.div`
     'header header'
     'attributes attributes'
     'advantages expertises'
-    'disadvantages techniques'
-    'characterImage equipments'
-    'characterImage notes'
-    'characterImage experience';
+    'disadvantages notes'
+    'experience experience';
   grid-template-columns: 23.65rem 23.65rem;
   row-gap: 1rem;
   column-gap: 3rem;
@@ -48,7 +46,7 @@ export const Header = styled.div`
   grid-area: header;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
   margin-bottom: 1rem;
 
@@ -88,11 +86,13 @@ export const Header = styled.div`
 
     .archtype {
       grid-area: archtype;
+      gap: 1rem;
       display: flex;
     }
 
     .concept {
       grid-area: concept;
+      gap: 1rem;
       display: flex;
     }
   }
@@ -106,6 +106,12 @@ export const Attributes = styled.div`
   gap: 0.5rem;
   margin-bottom: 2rem;
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .divider {
     width: 0.5px;
     height: 3rem;
@@ -116,7 +122,6 @@ export const Attributes = styled.div`
 const BaseElement = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   gap: 0.5rem;
   font-size: 0.8rem;
@@ -156,53 +161,33 @@ const BaseElement = styled.div`
 
 export const Advantages = styled(BaseElement)`
   grid-area: advantages;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  input {
-    width: 20rem;
-  }
 `
 
 export const Disadvantages = styled(BaseElement)`
   grid-area: disadvantages;
-  margin-bottom: 1.5rem;
 `
 
 export const Expertises = styled(BaseElement)`
   grid-area: expertises;
 `
 
-export const Techniques = styled(BaseElement)`
-  grid-area: techniques;
-`
-
-export const Equipments = styled(BaseElement)`
-  grid-area: equipments;
-`
-
-export const Notes = styled.div`
+export const Notes = styled(BaseElement)`
   grid-area: notes;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
 
   textarea {
-    width: 20rem;
-    height: 5rem;
+    width: 22rem;
+    height: 7rem;
   }
-`
-
-export const CharacterImage = styled.div`
-  grid-area: characterImage;
-  border: 1px solid black;
-  width: 20rem;
-  height: 25rem;
 `
 
 export const Experience = styled.div`
   grid-area: experience;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
   input {
     width: 20rem;

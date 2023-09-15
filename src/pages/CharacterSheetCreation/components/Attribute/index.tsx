@@ -6,6 +6,7 @@ import LifePointsIcon from '../../../../assets/SheetIcons/life-points-icon.png'
 import ManaPointsIcon from '../../../../assets/SheetIcons/mana-points-icon.png'
 import PowerIcon from '../../../../assets/SheetIcons/power-icon.png'
 import ResistanceIcon from '../../../../assets/SheetIcons/resistance-icon.png'
+import { InputHTMLAttributes } from 'react'
 
 type AttributeVariants =
   | 'power'
@@ -15,11 +16,11 @@ type AttributeVariants =
   | 'mana'
   | 'life'
 
-interface AttributeProps {
+interface AttributeProps extends InputHTMLAttributes<HTMLInputElement> {
   variant: AttributeVariants
 }
 
-export function Attribute({ variant }: AttributeProps) {
+export function Attribute({ variant, ...rest }: AttributeProps) {
   return (
     <AttributeContainer>
       {variant === 'power' && (
@@ -28,7 +29,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={PowerIcon} alt="" />
           </div>
           <label htmlFor="power">P: </label>
-          <input id="power" type="number" />
+          <input id="power" type="number" {...rest} />
         </BaseAttribute>
       )}
       {variant === 'ability' && (
@@ -37,7 +38,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={AbilityIcon} alt="" />
           </div>
           <label htmlFor="ability">H: </label>
-          <input id="ability" type="number" />
+          <input id="ability" type="number" {...rest} />
         </BaseAttribute>
       )}
       {variant === 'resistance' && (
@@ -46,7 +47,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={ResistanceIcon} alt="" />
           </div>
           <label htmlFor="resistance">R: </label>
-          <input id="resistance" type="number" />
+          <input id="resistance" type="number" {...rest} />
         </BaseAttribute>
       )}
       {variant === 'action' && (
@@ -55,7 +56,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={ActtionPointsIcon} alt="" />
           </div>
           <label htmlFor="action-points">PA: </label>
-          <input id="action-points" type="number" />
+          <input id="action-points" type="number" {...rest} />
         </SecondaryAttribute>
       )}
       {variant === 'mana' && (
@@ -64,7 +65,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={ManaPointsIcon} alt="" />
           </div>
           <label htmlFor="mana-points">PM: </label>
-          <input id="mana-points" type="number" />
+          <input id="mana-points" type="number" {...rest} />
         </SecondaryAttribute>
       )}
       {variant === 'life' && (
@@ -73,7 +74,7 @@ export function Attribute({ variant }: AttributeProps) {
             <img src={LifePointsIcon} alt="" />
           </div>
           <label htmlFor="life-points">PV: </label>
-          <input id="life-points" type="number" />
+          <input id="life-points" type="number" {...rest} />
         </SecondaryAttribute>
       )}
     </AttributeContainer>

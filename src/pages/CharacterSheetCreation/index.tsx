@@ -17,6 +17,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { NewItemModal } from './components/NewItemModal'
 import { useState } from 'react'
 import { InputItem } from './components/InputItem'
+import Button from '../../components/Button'
 
 export interface AdvantagesProps {
   id: number
@@ -233,7 +234,7 @@ export function CharacterSheetCreation() {
               />
             </div>
 
-            <div className="archtype">
+            {/* <div className="archtype">
               <label htmlFor="archtype">Arquétipo: </label>
               <input
                 id="archtype"
@@ -245,7 +246,7 @@ export function CharacterSheetCreation() {
                   })
                 }
               />
-            </div>
+            </div> */}
 
             <div className="concept">
               <label htmlFor="concept">Conceito: </label>
@@ -261,10 +262,11 @@ export function CharacterSheetCreation() {
               />
             </div>
           </div>
-          <button onClick={() => handleSaveSketch()}>Salvar Rascunho</button>
-          <button onClick={() => cleanAllInputs()}>
-            Limpar todos os campos
-          </button>
+          <Button text="Salvar Rascunho" onClick={() => handleSaveSketch()} />
+          <Button
+            text="Limpar todos os campos"
+            onClick={() => cleanAllInputs()}
+          />
         </Header>
 
         <Attributes>

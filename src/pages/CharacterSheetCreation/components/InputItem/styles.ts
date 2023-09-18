@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import * as Dialog from '@radix-ui/react-dialog'
 
 export const InputItemContainer = styled.div`
-  width: 22rem;
+  width: 20rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,6 +32,10 @@ export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
+`
+
+export const Trigger = styled(Dialog.Trigger)`
+  margin-bottom: -0.4rem;
 `
 
 export const Content = styled(Dialog.Content)`

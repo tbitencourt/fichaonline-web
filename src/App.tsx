@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Routes'
 import { CharacterSheetContextProvider } from './contexts/CharacterSheetContext'
+import { SketchSheetContextProvider } from './contexts/SketchSheetContext'
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <CharacterSheetContextProvider>
-          <Router />
+          <SketchSheetContextProvider>
+            <Router />
+          </SketchSheetContextProvider>
         </CharacterSheetContextProvider>
       </BrowserRouter>
     </ThemeProvider>

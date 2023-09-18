@@ -3,35 +3,29 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { CloseButton, Content, Overlay, Title } from './styles'
 import { useContext } from 'react'
 import { CharacterSheetContext } from '../../../../contexts/CharacterSheetContext'
-import { AdvantagesProps, DisadvantagesProps, ExpertisesProps } from '../..'
+import { SketchSheetContext } from '../../../../contexts/SketchSheetContext'
 
 interface NewItemModalProps {
   variant: 'advantages' | 'disadvantages' | 'expertises' | 'techniques'
-  setAdvantageFunction?: (data: AdvantagesProps) => void | undefined
-  setDisadvantageFunction?: (data: DisadvantagesProps) => void | undefined
-  setExpertiseFunction?: (data: ExpertisesProps) => void | undefined
 }
 
-export function NewItemModal({
-  variant,
-  setAdvantageFunction,
-  setDisadvantageFunction,
-  setExpertiseFunction,
-}: NewItemModalProps) {
+export function NewItemModal({ variant }: NewItemModalProps) {
   const { advantagesList, disadvantagesList, expertisesList } = useContext(
     CharacterSheetContext,
   )
+  const {
+    setAdvantageFunction,
+    setDisadvantageFunction,
+    setExpertiseFunction,
+  } = useContext(SketchSheetContext)
 
   function handleAddNewAdavantage(id: number) {
-    // @ts-ignore
     setAdvantageFunction(advantagesList[id - 1])
   }
   function handleAddNewDisadvantage(id: number) {
-    // @ts-ignore
     setDisadvantageFunction(disadvantagesList[id - 1])
   }
   function handleAddNewExpertise(id: number) {
-    // @ts-ignore
     setExpertiseFunction(expertisesList[id - 1])
   }
   return (

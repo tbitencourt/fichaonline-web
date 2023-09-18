@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const CharacterSheetCreationContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 5rem;
   font-family: 'Kanit', sans-serif;
 `
 
@@ -16,14 +17,14 @@ export const SheetContainer = styled.div`
     'attributes attributes'
     'advantages expertises'
     'disadvantages notes'
-    'experience experience';
+    'experience buttons';
   grid-template-columns: 23.65rem 23.65rem;
-  row-gap: 1rem;
+  row-gap: 2rem;
   column-gap: 3rem;
 
   border: 2px solid ${(props) => props.theme.sheetColors['blue-200']};
   border-radius: 8px;
-  padding: 4rem;
+  padding: 2rem 4rem;
 
   background: ${(props) => props.theme.sheetColors['blue-bg']};
 
@@ -64,7 +65,7 @@ export const Header = styled.div`
   }
 
   .infos {
-    width: 33rem;
+    width: 37rem;
     display: grid;
     grid-template-areas:
       'name'
@@ -122,6 +123,8 @@ export const Attributes = styled.div`
 const BaseElement = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  min-height: 10rem;
 
   gap: 0.5rem;
   font-size: 0.8rem;
@@ -194,4 +197,10 @@ export const Experience = styled.div`
     border: 0;
     border-bottom: 1px solid black;
   }
+`
+export const Buttons = styled.div`
+  grid-area: buttons;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `

@@ -5,12 +5,12 @@
 
 :root {
   --heights: 70vh;
-  --widths: 100%;
+  --widths: 1440px;
 }
 
 .slider-container {
   height: var(--heights);
-  width: var(--widths);
+  max-width: var(--widths);
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -52,7 +52,7 @@
 
 .slide-text {
   top: 80%;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .prev,

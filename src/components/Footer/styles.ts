@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
-export const FooterContainer = styled.header`
+export const FooterContainer = styled.footer`
+  position: absolute;
+  bottom: 0;
+
   width: 100%;
   height: 5rem;
-  max-width: 1120px;
-  margin: -5rem auto;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;

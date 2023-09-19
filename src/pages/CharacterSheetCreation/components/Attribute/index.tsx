@@ -7,6 +7,7 @@ import ManaPointsIcon from '../../../../assets/SheetIcons/mana-points-icon.png'
 import PowerIcon from '../../../../assets/SheetIcons/power-icon.png'
 import ResistanceIcon from '../../../../assets/SheetIcons/resistance-icon.png'
 import { InputHTMLAttributes } from 'react'
+import { Tooltip } from '@radix-ui/themes'
 
 type AttributeVariants =
   | 'power'
@@ -24,58 +25,70 @@ export function Attribute({ variant, ...rest }: AttributeProps) {
   return (
     <AttributeContainer>
       {variant === 'power' && (
-        <BaseAttribute>
-          <div className="image">
-            <img src={PowerIcon} alt="" />
-          </div>
-          <label htmlFor="power">P: </label>
-          <input id="power" type="number" {...rest} />
-        </BaseAttribute>
+        <Tooltip content="Poder">
+          <BaseAttribute>
+            <div className="image">
+              <img src={PowerIcon} alt="" />
+            </div>
+            <label htmlFor="power">P: </label>
+            <input id="power" type="number" {...rest} />
+          </BaseAttribute>
+        </Tooltip>
       )}
       {variant === 'ability' && (
-        <BaseAttribute>
-          <div className="image">
-            <img src={AbilityIcon} alt="" />
-          </div>
-          <label htmlFor="ability">H: </label>
-          <input id="ability" type="number" {...rest} />
-        </BaseAttribute>
+        <Tooltip content="Habilidade">
+          <BaseAttribute>
+            <div className="image">
+              <img src={AbilityIcon} alt="" />
+            </div>
+            <label htmlFor="ability">H: </label>
+            <input id="ability" type="number" {...rest} />
+          </BaseAttribute>
+        </Tooltip>
       )}
       {variant === 'resistance' && (
-        <BaseAttribute>
-          <div className="image">
-            <img src={ResistanceIcon} alt="" />
-          </div>
-          <label htmlFor="resistance">R: </label>
-          <input id="resistance" type="number" {...rest} />
-        </BaseAttribute>
+        <Tooltip content="Resistência">
+          <BaseAttribute>
+            <div className="image">
+              <img src={ResistanceIcon} alt="" />
+            </div>
+            <label htmlFor="resistance">R: </label>
+            <input id="resistance" type="number" {...rest} />
+          </BaseAttribute>
+        </Tooltip>
       )}
       {variant === 'action' && (
-        <SecondaryAttribute>
-          <div className="image">
-            <img src={ActtionPointsIcon} alt="" />
-          </div>
-          <label htmlFor="action-points">PA: </label>
-          <input id="action-points" type="number" {...rest} />
-        </SecondaryAttribute>
+        <Tooltip content="Pontos de ação">
+          <SecondaryAttribute>
+            <div className="image">
+              <img src={ActtionPointsIcon} alt="" />
+            </div>
+            <label htmlFor="action-points">PA: </label>
+            <input id="action-points" type="number" {...rest} />
+          </SecondaryAttribute>
+        </Tooltip>
       )}
       {variant === 'mana' && (
-        <SecondaryAttribute>
-          <div className="image">
-            <img src={ManaPointsIcon} alt="" />
-          </div>
-          <label htmlFor="mana-points">PM: </label>
-          <input id="mana-points" type="number" {...rest} />
-        </SecondaryAttribute>
+        <Tooltip content="Pontos de mana">
+          <SecondaryAttribute>
+            <div className="image">
+              <img src={ManaPointsIcon} alt="" />
+            </div>
+            <label htmlFor="mana-points">PM: </label>
+            <input id="mana-points" type="number" {...rest} />
+          </SecondaryAttribute>
+        </Tooltip>
       )}
       {variant === 'life' && (
-        <SecondaryAttribute>
-          <div className="image">
-            <img src={LifePointsIcon} alt="" />
-          </div>
-          <label htmlFor="life-points">PV: </label>
-          <input id="life-points" type="number" {...rest} />
-        </SecondaryAttribute>
+        <Tooltip content="Pontos de vida">
+          <SecondaryAttribute>
+            <div className="image">
+              <img src={LifePointsIcon} alt="" />
+            </div>
+            <label htmlFor="life-points">PV: </label>
+            <input id="life-points" type="number" {...rest} />
+          </SecondaryAttribute>
+        </Tooltip>
       )}
     </AttributeContainer>
   )

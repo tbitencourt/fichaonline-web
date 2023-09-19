@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Routes'
 import { CharacterSheetContextProvider } from './contexts/CharacterSheetContext'
 import { SketchSheetContextProvider } from './contexts/SketchSheetContext'
+import { Theme } from '@radix-ui/themes'
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <BrowserRouter>
         <CharacterSheetContextProvider>
           <SketchSheetContextProvider>
-            <Router />
+            <Theme>
+              <Router />
+            </Theme>
           </SketchSheetContextProvider>
         </CharacterSheetContextProvider>
       </BrowserRouter>

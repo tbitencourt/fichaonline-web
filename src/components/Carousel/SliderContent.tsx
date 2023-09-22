@@ -1,3 +1,5 @@
+import './sliderContent.css'
+
 export interface SliderImage {
   urls: string
   title: string
@@ -11,7 +13,7 @@ interface SliderContentProps {
 
 function SliderContent({ activeIndex, sliderImage }: SliderContentProps) {
   return (
-    <section>
+    <section className="slider-content-container">
       {sliderImage.map((slide, index) => (
         <div
           key={index}

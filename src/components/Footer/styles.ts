@@ -1,13 +1,17 @@
 import styled from 'styled-components'
 
-export const FooterContainer = styled.header`
+export const FooterContainer = styled.footer`
+  position: absolute;
+  bottom: 0;
+
   width: 100%;
-  height: 0;
-  max-width: 1120px;
-  margin: -2rem auto;
+  height: 5rem;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme }) => theme.colors['base-button']};
+  background-color: ${({ theme }) => theme.colors['base-title']};
 
   p {
     color: ${(props) => props.theme['base-card']};

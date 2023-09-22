@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const ButtonContainer = styled.button`
-  padding: 0.75rem 2.8rem;
-  color: ${({ theme }) => theme.colors['base-white']};
-  background-color: ${({ theme }) => theme.colors['brand-purple']};
+  padding: 0.45rem 1rem;
+  color: ${({ theme }) => theme.colors['base-button']};
+  background-color: ${({ theme }) => theme.colors['base-title']};
   font-weight: 700;
   font-size: ${({ theme }) => theme.textSizes['components-button-g']};
   box-shadow: 0 0 0.2rem 0.1rem #888888;
@@ -19,6 +19,6 @@ export const ButtonContainer = styled.button`
   }
 
   &:not(:disabled):hover {
-    background-color: ${({ theme }) => theme.colors['brand-purple-dark']};
+    background-color: ${({ theme }) => theme.colors['base-subtitle']};
   }
 `

@@ -3,7 +3,7 @@ import { FooterContainer } from './styles'
 function Footer() {
   return (
     <FooterContainer>
-      <p>Site desenvolvido por @Ficha-Online Team</p>
+      <p>&copy; 2023 - Ficha Online | Site desenvolvido por fãs para fãs...</p>
     </FooterContainer>
   )
 }

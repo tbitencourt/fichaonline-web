@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const LayoutContainer = styled.div`
-  .container {
-    width: 100%;
-    max-width: 70rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 `

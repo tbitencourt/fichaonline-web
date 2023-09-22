@@ -1,11 +1,10 @@
-import Slider from '../../components/Carousel/Slider'
 import { Container } from './styles'
 
-export function Home() {
+export function Blog() {
   return (
     <>
       <Container>
-        <Slider />
+        <h1>Blog</h1>
       </Container>
     </>
   )

@@ -2,22 +2,20 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  height: 0;
-  // max-width: 1120px;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  justify-content: center;
+  padding: 0.5rem 0;
 
-  div.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    top: 1.5rem;
+  color: ${({ theme }) => theme.colors['base-button']};
+  background-color: ${({ theme }) => theme.colors['base-title']};
 
-    img {
-      width: 4.5rem;
-    }
+  img {
+    width: 6.5rem;
+  }
 
-    a {
-      color: ${({ theme }) => theme.colors['base-title']};
-    }
+  a {
+    color: ${({ theme }) => theme.colors['base-button']};
   }
 `
